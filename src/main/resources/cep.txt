@@ -1,0 +1,11 @@
+{"mailNo": "123", "actionTime": "2021-05-04 10:24:10", "actionCode": 400}
+{"mailNo": "1234", "actionTime": "2021-05-04 10:25:32", "actionCode": 400}
+{"mailNo": "123", "actionTime": "2021-05-04 10:24:40", "actionCode": 300}
+{"mailNo": "1234", "actionTime": "2021-05-04 10:25:50", "actionCode": 500}
+{"mailNo": "123", "actionTime": "2021-05-04 10:26:50", "actionCode": 500}
+
+
+{"mailNo": "123", "actionTime": "2021-05-04 10:24:40", "actionCode": 400}
+{"mailNo": "123", "actionTime": "2021-05-04 10:24:20", "actionCode": 500}
+
+{"mailNo": "12345", "actionTime": "2021-05-04 10:26:00", "actionCode": 500}
