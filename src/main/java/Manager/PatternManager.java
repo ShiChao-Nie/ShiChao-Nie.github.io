@@ -10,20 +10,20 @@ import org.apache.flink.streaming.api.windowing.time.Time;
  * Date: 2021/5/6
  */
 public class PatternManager {
-    public static Pattern<OperatorAction, OperatorAction> getPattern() {
-        Pattern<OperatorAction, OperatorAction> startPattern = Pattern
-                .<OperatorAction>begin("start").where(
-                        new SimpleCondition<OperatorAction>() {
+    public static Pattern<Shipment, Shipment> getPattern() {
+        Pattern<Shipment, Shipment> startPattern = Pattern
+                .<Shipment>begin("start").where(
+                        new SimpleCondition<Shipment>() {
                             @Override
-                            public boolean filter(OperatorAction operatorAction) throws Exception {
-                                return operatorAction.getActionCode() == 400;
+                            public boolean filter(Shipment operatorAction) throws Exception {
+                                return shipment.getGmtCreate() != null && shipment.getShipmentCreateTime() == null;
                             }
-                        }).notNext("notNext").where(new SimpleCondition<OperatorAction>() {
+                        }).notNext("notNext").where(new SimpleCondition<Shipment>() {
                     @Override
-                    public boolean filter(OperatorAction operatorAction) throws Exception {
-                        return operatorAction.getActionCode() == 500;
+                    public boolean filter(Shipment shipment) throws Exception {
+                        return return shipment.getGmtCreate() != null && shipment.getShipmentCreateTime() != null;
                     }
-                }).within(Time.seconds(5));
+                }).within(Time.hours(3));
         return startPattern;
     }
 }
